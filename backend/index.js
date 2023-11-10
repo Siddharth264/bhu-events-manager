@@ -4,7 +4,7 @@ require('dotenv').config()
 const connectDb = require('./config/dbConnect')
 const userRoute = require('./routes/userRoute')
 const authRoute = require('./routes/authRoute')
-
+const errorHandler = require('./middleware/errorHandler')
 connectDb()
 
 
@@ -17,8 +17,6 @@ app.listen(PORT,()=>{
 })
 
 app.use(express.json())
-
-
-
 app.use('/api/v1/user', userRoute)
 app.use('/api/v1/auth', authRoute)
+app.use(errorHandler)
