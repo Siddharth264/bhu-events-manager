@@ -42,7 +42,7 @@ export default function SignIn() {
     }
   };
   return (
-    <div className="max-w-lg mx-auto mt-32 bg-white  shadow-2xl p-10 rounded-l
+    <div className="max-w-lg mx-auto mt-32 bg-white  shadow-2xl p-10 rounded-l">
       <h1 className="text-center text-2xl mb-10 uppercase">Sign In</h1>
       <form onSubmit={handleSubmit} className="flex flex-col gap-3">
         <div className="flex flex-col gap-1">
@@ -75,7 +75,7 @@ export default function SignIn() {
       <Link to={"/signup"}>
         {" "}
         <span className="text-center text-sm mb-10 text-blue-700">Sign Up</span>
-      </Link/>
+      </Link>
       {error && <p className="text-xs text-red-700 mt-4 font-bold text-center">{error}</p>}
 
     </div>
