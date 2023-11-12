@@ -1,4 +1,4 @@
-import Logo from '../assets/logo.png'
+import Logo from '../assets/Logo.png'
 export default function Header() {
   return (
     <div className='flex flex-row shadow-lg max-w-full max-h-26  bg-gradient-to-r from-indigo-200 from-10% via-sky-400 via-30% to-emerald-300 to-90% ...'> 
