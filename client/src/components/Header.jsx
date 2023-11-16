@@ -1,4 +1,5 @@
-import Logo from "../assets/Logo.png";
+import { Link } from 'react-router-dom';
+import Logo from '../assets/Logo.png'
 import {useNavigate} from 'react-router-dom'
 export default function Header() {
 
@@ -18,16 +19,22 @@ export default function Header() {
     <div className="flex flex-row shadow-lg max-w-full max-h-26  bg-gradient-to-r from-indigo-200 from-10% via-sky-400 via-30% to-emerald-300 to-90% ...">
       <img className="h-28 w-80 " src={Logo} alt="logo" />
       <div className="mr-0 ml-auto">
-        <button className=" h-7 w-20 rounded-lg  mr-6 mt-10 uppercase  font-sans font-medium tracking-wide text-white text-lg outline outline-offset-2 outline-1  shadow-xl  no-underline hover:underline  ">
+        <Link to={'/about'}>
+        <button className=" h-7 w-20 rounded-lg  mr-6 mt-10 uppercase font-sans font-medium tracking-wide text-white text-sm outline outline-offset-2 outline-1  shadow-xl  no-underline hover:bg-cyan-500  ">
           About
         </button>
-        <button className=" h-7 w-20 rounded-lg mr-6 mt-10 uppercase font-sans font-medium tracking-wide text-white text-lg outline outline-offset-2 outline-1 shadow-xl no-underline hover:underline ">
+        </Link>
+        <Link to={'/'}>
+        <button className=" h-7 w-20 rounded-lg mr-6 mt-10 uppercase font-sans font-medium tracking-wide text-white text-sm outline outline-offset-2 outline-1 shadow-xl no-underline  ">
           Home
         </button>
-        <button onClick={handleSignout} className=" h-7 w-20 rounded-lg mr-16 mt-10 uppercase font-sans font-medium tracking-wide text-white text-lg outline outline-offset-2  outline-1 shadow-xl no-underline hover:underline ">
+        
+        </Link> 
+        <Link to={'/signup'}>
+        <button onClick={handleSignout} className=" h-7 w-20 rounded-lg mr-16 mt-10 uppercase font-sans font-medium tracking-wide text-white text-sm outline outline-offset-2  outline-1 shadow-xl no-underline  ">
           Sign Up
         </button>
-       
+        </Link>
       </div>
     </div>
   );
