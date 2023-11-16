@@ -5,6 +5,7 @@ const jwt = require('jsonwebtoken')
 // because it is unsafe to store the password directly
 // in the database
 const bcryptjs = require('bcryptjs')
+const { response } = require('express')
 const signup = async (req, res, next) => {
     //Destructure the data
     const {username, email, password } = req.body
@@ -59,4 +60,13 @@ const signin = async(req, res, next) => {
     }
 }
 
-module.exports = {signup, signin}
+const signout = async (req, res, next) => {
+    try{
+        res.clearCookie("access_token");
+        res.status(200).json('Signout successful')
+    }catch(error){
+        next(error);
+    }
+}
+
+module.exports = {signup, signin, signout}
