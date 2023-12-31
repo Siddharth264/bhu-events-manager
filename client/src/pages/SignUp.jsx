@@ -57,6 +57,7 @@ export default function SignUp() {
             type="text"
             id="username"
             onChange={handleChange}
+            autoComplete="off"
           />
         </div>
         <div className="flex flex-col gap-1">
@@ -68,6 +69,7 @@ export default function SignUp() {
             type="email"
             id="email"
             onChange={handleChange}
+            autoComplete="off"
           />
         </div>
         <div className="flex flex-col gap-1">
@@ -79,6 +81,7 @@ export default function SignUp() {
             type="password"
             id="password"
             onChange={handleChange}
+            autoComplete="off"
           />
         </div>
         <button disabled={loading} className="bg-slate-600 p-3 text-white rounded-lg uppercase my-6">

@@ -16,25 +16,43 @@ export default function Header() {
   }
 
   return (
-    <div className="flex flex-row shadow-lg max-w-full max-h-26  bg-gradient-to-r from-indigo-200 from-10% via-sky-400 via-30% to-emerald-300 to-90% ...">
-      <img className="h-28 w-80 " src={Logo} alt="logo" />
-      <div className="mr-0 ml-auto">
-        <Link to={'/about'}>
-        <button className=" h-7 w-20 rounded-lg  mr-6 mt-10 uppercase font-sans font-medium tracking-wide text-white text-sm outline outline-offset-2 outline-1  shadow-xl  no-underline hover:bg-cyan-500  ">
-          About
-        </button>
-        </Link>
-        <Link to={'/'}>
-        <button className=" h-7 w-20 rounded-lg mr-6 mt-10 uppercase font-sans font-medium tracking-wide text-white text-sm outline outline-offset-2 outline-1 shadow-xl no-underline  ">
+    <div className="flex items-center justify-between ">
+      <div className='flex gap-3  items-center  m-2  p-2 '>
+      <img className="h-[3rem] " src={Logo} alt="logo" />
+      <div className='flex items-center '>
+      <span className='text-2xl font-bold italic  text-slate-700'>Event </span>
+      <span className='text-2xl font-bold italic text-[#ff644c]'>Sync</span>
+      </div>
+      </div>
+      <div className="mr-[2rem] flex gap-3 ">
+      <Link to={'/'}>
+        <button className="   ">
           Home
         </button>
         
         </Link> 
-        <Link to={'/signup'}>
-        <button onClick={handleSignout} className=" h-7 w-20 rounded-lg mr-16 mt-10 uppercase font-sans font-medium tracking-wide text-white text-sm outline outline-offset-2  outline-1 shadow-xl no-underline  ">
+        <Link to={'/about'}>
+        <button className="  ">
+          Our Company
+        </button>
+        </Link>
+        <Link>Join Us</Link>
+       
+        <Link>Hire Us</Link>
+      </div >
+      <div className="flex gap-2 mr-4">
+      <Link to={'/signup'}>
+        <button  className="  ">
           Sign Up
         </button>
         </Link>
+        <Link to={'/signin'}>
+        <button  className="  ">
+          Login
+        </button>
+        </Link>
+
+        
       </div>
     </div>
   );
