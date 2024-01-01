@@ -1,19 +1,29 @@
-import { Link } from 'react-router-dom';
-import Logo from '../assets/Logo.png'
-import {useNavigate} from 'react-router-dom'
+import { Link } from "react-router-dom";
+import Logo from "../assets/Logo.png";
+import { useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import {signOutStart, signOutSuccess, signOutFailure} from '../redux/user/userSlice'
 export default function Header() {
-
-  const navigate = useNavigate()
-
+  const { currentUser } = useSelector((state) => state.user);
+  const navigate = useNavigate();
+  const dispatch = useDispatch()
   const handleSignout = async () => {
-    const res = await fetch(`/api/v1/auth/signout`);
-    const data = await res.json();
-
-    if(data.success === false){
-      alert(data.message);
+    try {
+      dispatch(signOutStart())
+      const res = await fetch(`/api/v1/auth/signout`);
+      const data = await res.json();
+  
+      if (data.success === false) {
+        dispatch(signOutFailure(data.message));
+        return
+        }
+        dispatch(signOutSuccess())
+        navigate("/signin");
+      
+    } catch (error) {
+      dispatch(signOutFailure())
     }
-    navigate('/signin')
-  }
+  };
 
   return (
     <div className="flex items-center justify-between ">
