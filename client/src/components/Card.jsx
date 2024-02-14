@@ -5,6 +5,9 @@ import date from '../assets/date.svg'
 import location from '../assets/location.svg'
 
 export default function Card(props) {
+
+  let givenDate = new Date(props.date)
+  givenDate = givenDate.toLocaleDateString();
   return (
     <div className=" bg-white border-2 rounded-xl mx-4 my-6 shadow-md h-[18rem] min-w-[14rem] max-w-[14rem] transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-105 hover:shadow-2xl duration-200 ">
       <div className="w-full  rounded-xl relative ">
@@ -16,7 +19,7 @@ export default function Card(props) {
         <div className="flex flex-col gap-1">
         <div className="flex gap-2 text-xs">
             <img src={date} alt="" className="w-[1.1rem]"/>
-            <span>{props.date} </span>
+            <span>{givenDate} </span>
 
         </div>
         <div className="flex gap-2 text-xs" >

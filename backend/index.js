@@ -1,5 +1,6 @@
 const express = require('express');
 require('dotenv').config()
+const cron = require('node-cron');
 const connectDb = require('./config/dbConnect')
 const userRoute = require('./routes/userRoute')
 const authRoute = require('./routes/authRoute')
@@ -18,6 +19,18 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT,()=>{
     console.log(`Server listening on port ${PORT}`);
 })
+
+const Event = require('./models/eventModel')
+
+cron.schedule('0 0 * * *', async () => {
+  try {
+    const currentDate = new Date();
+    await Event.deleteMany({ date: { $lt: currentDate } });
+    console.log('Expired events deleted:', currentDate);
+  } catch (error) {
+    console.error('Error deleting expired events:', error);
+  }
+});
 
 app.use(express.json())
 app.use('/api/v1/user', userRoute)

@@ -60,6 +60,8 @@ export default function CreateNewEvent() {
     
   }
 
+  console.log(formData)
+
   const handleSubmit = async(e) =>{
     e.preventDefault();
 
@@ -138,7 +140,7 @@ export default function CreateNewEvent() {
               Date of event(dd/mm/yyyy)
             </span>
             <input
-              type="text"
+              type="date"
               id="date"
               required
               onChange={handleChange}
