@@ -67,6 +67,7 @@ const recreational = listingData.map((item) => {
         <span>
             Upcoming Events
         </span>
+        <button className="border-2 border-slate-300 rounded-lg text-xs text-slate-500 p-[0.4rem] font-bold shadow-md  hover:shadow-lg  ">Explore more</button>
       </div>
       <div className="flex overflow-y-hidden overflow-x-auto mb-2 ">{upcoming}</div>
     </div>
@@ -80,11 +81,12 @@ const recreational = listingData.map((item) => {
       <div className="flex overflow-y-hidden overflow-x-auto mb-2 ">{educational}</div>
     </div>
 
-    && <div className=" my-12 w-[85rem] bg-white mx-auto border rounded-xl p-4 shadow-lg shadow-purple-300">
+     <div className=" my-12 w-[85rem] bg-white mx-auto border rounded-xl p-4 shadow-lg shadow-purple-300">
       <div className="text-3xl font-bold text-slate-700 m-4  tracking-wide">
         <span>
             Sports
         </span>
+        <button className="border-2 border-slate-300 rounded-lg text-xs text-slate-500 p-[0.4rem] font-bold shadow-md   ">Explore more</button>
       </div>
       <div className="flex overflow-y-hidden overflow-x-auto mb-2 ">{sports}</div>
     </div>
@@ -94,6 +96,7 @@ const recreational = listingData.map((item) => {
         <span>
              Recreational
         </span>
+        <button className="border-2 border-slate-300 rounded-lg text-xs text-slate-500 p-[0.4rem] font-bold shadow-md  ">Explore more</button>
       </div>
       <div className="flex overflow-y-hidden overflow-x-auto mb-2 ">{recreational}</div>
     </div>

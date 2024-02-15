@@ -39,7 +39,7 @@ export default function Header() {
           <span className="text-2xl font-bold italic text-[#ff644c]">Sync</span>
         </div>
       </div>
-      <div className="mr-[2rem] flex gap-3 ">
+      <div className="mr-[2rem] flex gap-5 font-semibold text-slate-700 ">
         <Link to={"/"}>
           <button className="   ">Home</button>
         </Link>
@@ -58,12 +58,12 @@ export default function Header() {
         <Link to={"/signin"}>
           <button className="  " onClick={handleSignout}>Logout</button>
         </Link>
-      </div> :   <div className="flex gap-2 mr-4">
+      </div> :   <div className="flex gap-4 mr-4 items-center">
         <Link to={"/signup"}>
-          <button className="  ">Sign Up</button>
+          <button className=" text-sm font-semibold  hover:opacity-70 ">Sign Up</button>
         </Link>
         <Link to={"/signin"}>
-          <button className="  ">Login</button>
+          <button className=" bg-black text-white p-2 w-[5rem] border-none font-bold rounded-md text-xs hover:opacity-70">Login</button>
         </Link>
       </div> }
     </div>

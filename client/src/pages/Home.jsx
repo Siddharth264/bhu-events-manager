@@ -44,9 +44,10 @@ export default function Home() {
           className="absolute w-[15rem]  top-16  rotate-180 right-12"
         />
       </div>
-      <div className="bg-">
+      <div className="bg-[#f2e9e4]  p-2">
         <Section />
       </div>
+      
     </>
   );
 }
