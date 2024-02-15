@@ -50,9 +50,11 @@ export default function Header() {
 
         <Link>Hire Us</Link>
       </div>
-     {currentUser?  <div className="flex gap-4 mr-4 items-center ">
-
-      <img src={currentUser.avatar} className="w-7 rounded-full " alt="" />
+     {currentUser?  <div className="flex gap-2 mr-4 items-center">
+      <Link className="flex gap-2 items-center" to="/profile">
+      <span className="font-bold underline underline-offset-2">Hi, {currentUser.username}</span>
+      <img src={currentUser.avatar} className="w-8 rounded-full " alt="" />
+      </Link>
         <Link to={"/signin"}>
           <button className="  " onClick={handleSignout}>Logout</button>
         </Link>

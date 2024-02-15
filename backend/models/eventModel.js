@@ -1,47 +1,50 @@
 const mongoose = require("mongoose");
-const eventSchema = mongoose.Schema(
-  {
-    title: {
-      type: String,
-      required: [true, "You must provide a title"],
-    },
-    date: {
-      type: String,
-      required: [true, "You must provide a date"],
-    },
-    venue: {
-      type: String,
-      required: [true, "You must provide a venue"],
-    },
-    imageUrl: {
-      type: String,
-      required: [true, "You must provide an image"],
-    },
-    category: {
-      type: String,
-      required: [true, "You must provide a category"],
-    },
-    registerUrl: {
-      type: String,
-    },
-    organizer: {
-      type: String,
-    },
-    time: {
-      type: String,
-      required: [true, "You must provide a time"],
-    },
-    userRef: {
-      type: String,
-      required: [true, "userRef is required"],
-    },
-    description: {
-      type: String,
-    },
-  },
-  {
-    timestamps: true,
-  }
-);
 
-module.exports= mongoose.model("Event", eventSchema)
+const eventSchema = mongoose.Schema({
+    title:{
+        type: String,
+        required: true
+    },
+    description:{
+        type: String,
+        required: true
+    },
+    registerUrl:{
+        type: String,
+        required: true
+    },
+    address:{
+        type: String,
+        required: true
+    },
+    date:{
+        type: Date,
+        required: true
+    },
+    time:{
+        type: String,
+        required: true
+    },
+    meridian:{
+        type: String,
+        required: true
+    },
+    category:{
+        type: String,
+        required: true
+    },
+    organiser:{
+        type: String,
+        required: true
+    },
+    imageUrl:{
+        type: String,
+        required: true
+    },
+    userRef:{
+        type: String,
+        required: true
+    }
+})
+
+module.exports = mongoose.model('Event', eventSchema)
