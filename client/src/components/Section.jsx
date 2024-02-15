@@ -81,7 +81,7 @@ const recreational = listingData.map((item) => {
       <div className="flex overflow-y-hidden overflow-x-auto mb-2 ">{educational}</div>
     </div>
 
-    && <div className=" my-12 w-[85rem] bg-white mx-auto border rounded-xl p-4 shadow-lg shadow-purple-300">
+     <div className=" my-12 w-[85rem] bg-white mx-auto border rounded-xl p-4 shadow-lg shadow-purple-300">
       <div className="text-3xl font-bold text-slate-700 m-4  tracking-wide">
         <span>
             Sports
